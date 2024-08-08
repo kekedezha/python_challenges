@@ -5,17 +5,25 @@ def random_number_game(name):
     game_count = 0
     player_wins = 0
 
-    random_number = random.choice("123")
-    player_choice = input(f"\n{name}, guess what number I am thinking of...1, 2 or 3.\n\n")
+    def play_game():
+        nonlocal player_wins
+        nonlocal game_count
 
-    print(f"\n{name} you chose {player_choice}.")
-    print(f"I was thinking about the number {random_number}")
+        random_number = random.choice("123")
+        player_choice = input(f"\n{name}, guess what number I am thinking of...1, 2 or 3.\n\n")
 
-    if player_choice == random_number:
-        player_wins += 1
+        print(f"\n{name} you chose {player_choice}.")
+        print(f"I was thinking about the number {random_number}")
 
-    print(f"Game count: {game_count}")
-    print(f"{name}'s wins: {player_wins}")
+        
+        if player_choice == random_number:
+            player_wins += 1
+        game_count += 1
+
+        print(f"Game count: {game_count}")
+        print(f"{name}'s wins: {player_wins}")
+
+    return play_game
 
 if __name__ == "__main__":
     import argparse
@@ -31,4 +39,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    random_number_game(args.name);
+    rng = random_number_game(args.name);
+    rng()
