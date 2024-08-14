@@ -11,13 +11,18 @@ def arcade(name="Player_one"):
             continue
         else:
             break
-
-    if player_choice == "2":
-        random_number_game(name)
-    elif player_choice == "1":
-        rps(name)
-    else:
-        sys.exit(f"\n\nSee you next time!\nBye {name}!✌🏽")
+    def play_arcade():
+        if player_choice == "2":
+            rng = random_number_game(name)
+            rng()
+        elif player_choice == "1":
+            rps_play = rps(name)
+            rps_play()
+        else:
+            sys.exit(f"\n\nSee you next time!\nBye {name}!✌🏽")
+        return play_arcade()
+    play_arcade()
+    
 
 #only run file if in 
 if __name__ == "__main__":

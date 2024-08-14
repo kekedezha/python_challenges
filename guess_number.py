@@ -7,6 +7,7 @@ def random_number_game(name):
     player_wins = 0
 
     def play_game():
+        nonlocal name
         nonlocal player_wins
         nonlocal game_count
 
@@ -36,7 +37,6 @@ def random_number_game(name):
             return play_game()
         else:
             print(f"Thank you for playing!")
-            sys.exit(f"Bye {name}!")
 
     return play_game
 

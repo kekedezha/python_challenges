@@ -80,6 +80,5 @@ def rps(name='PlayerOne'):
         else:
             print("\n🎉🎉🎉🎉")
             print("Thank you for playing!\n")
-            sys.exit(f"Bye {name}! 👋")
 
     return play_rps
