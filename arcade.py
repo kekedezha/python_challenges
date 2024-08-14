@@ -12,6 +12,7 @@ def arcade(name="Player_one"):
         else:
             break
     def play_arcade():
+        nonlocal player_choice
         if player_choice == "2":
             rng = random_number_game(name)
             rng()
@@ -20,6 +21,8 @@ def arcade(name="Player_one"):
             rps_play()
         else:
             sys.exit(f"\n\nSee you next time!\nBye {name}!✌🏽")
+
+        player_choice = input(f"{name}, welcome back to the arcade menu!\n\nPlease choose a game to play: \n1 = Rock, Paper, Scissors\n2 = Guess My Number\n\nOr press 'x' to exit the arcade.\n\n")
         return play_arcade()
     play_arcade()
     
