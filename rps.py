@@ -81,4 +81,10 @@ def rps(name='PlayerOne'):
             print("\n🎉🎉🎉🎉")
             print("Thank you for playing!\n")
 
+            # if running rps file independently, exit file upon quit. Else empty return to get out of function and return to arcade
+            if __name__ == "__main__":
+                sys.exit(f"Bye {name}!")
+            else:
+                return
+
     return play_rps
